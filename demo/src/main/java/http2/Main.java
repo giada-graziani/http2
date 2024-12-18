@@ -34,12 +34,22 @@ public class Main {
             }while(!header.isEmpty());
 
             //controllo se è presente url
-            if(resource.equals("/")){ 
-                resource="index.html";
+            if(resource.endsWith("/")){ 
+                resource+="index.html";
             }
             File file = new File("htdocs/"+ resource);
+            //si controlla se è un file
+            if(file.isDirectory()){
+                out.writeBytes("HTTP/1.1 301 Moved Permanently\n"); 
+                // INTESTAZIONE
+                out.writeBytes("Content-Length: 0\n");
+                // CHIAMO UNA FUNZ per GESTIRE le diverse estensioni di file richieste
+                out.writeBytes("Location: "+resource+"/\n");// 
+                // RIGA VUOTA
+                out.writeBytes("\n");
+            }    
             
-            if(file.exists()){
+            else if(file.exists()){
                 //costruisco risposta http
                 // RIGA DI RISPOSTA
                 out.writeBytes("HTTP/1.1 200 OK\n");

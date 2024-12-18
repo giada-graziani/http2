@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
+.fine_line{
+    font-family: 'Kanit', sans-serif;
+}
+
+.ticket{
+    width: 20px;
+}
+
+.foto{
+    height: 700px;
+}
+
+.lingua{
+    width: 40px;
+}
+
+.introduzione{
+    margin:50px 25% 50px 25%;
+}
+
+.introduzione p{
+    text-align:justify;
+}
+
+.logo{
+    width: 40px;
+}
+
+.twich{
+    width: 30px;
+}
+
+.tel{
+    width: 35px;
+}
